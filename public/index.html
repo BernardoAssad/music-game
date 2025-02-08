@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <body>
+        <div class="container">
+            <div id="categorias">
+                <div class="header">
+                    <h1>Music Game</h1>
+                    <div class="intro-text">
+                        Bem-vindo ao Music Game! 🎮 Teste seus conhecimentos musicais de forma divertida. 
+                        Escolha uma categoria, ouça trechos de músicas e tente adivinhar qual é a música correta. 
+                        Cada acerto vale pontos e você tem 5 rodadas para mostrar que é um verdadeiro conhecedor! 
+                        Pronto para o desafio? 🎵
+                    </div>
+                </div>
+                <div class="grid-categorias">
+                    <div class="categoria-card" onclick="iniciarJogo('mpb')">
+                        <div class="categoria-emoji">🎸</div>
+                        <div class="categoria-nome">MPB</div>
+                        <div class="categoria-descricao">A música do Brasil!</div>
+                    </div>
+                    
+                    <div class="categoria-card" onclick="iniciarJogo('pop_internacional')">
+                        <div class="categoria-emoji">🌟</div>
+                        <div class="categoria-nome">Pop</div>
+                        <div class="categoria-descricao">Hits que dominam o mundo!</div>
+                    </div>
+    
+                    <div class="categoria-card" onclick="iniciarJogo('trapbr')">
+                        <div class="categoria-emoji">🎤</div>
+                        <div class="categoria-nome">Trap BR</div>
+                        <div class="categoria-descricao">O som das ruas!</div>
+                    </div>
+    
+                    <div class="categoria-card" onclick="iniciarJogo('rapbr')">
+                        <div class="categoria-emoji">🎧</div>
+                        <div class="categoria-nome">Rap BR</div>
+                        <div class="categoria-descricao">Poesia urbana!</div>
+                    </div>
+    
+                    <div class="categoria-card" onclick="iniciarJogo('hitsbr')">
+                        <div class="categoria-emoji">⭐</div>
+                        <div class="categoria-nome">Hits BR</div>
+                        <div class="categoria-descricao">Sucessos nacionais!</div>
+                    </div>
+
+                    <div class="categoria-card" onclick="iniciarJogo('reggae')">
+                        <div class="categoria-emoji">🌴</div>
+                        <div class="categoria-nome">Reggae BR</div>
+                        <div class="categoria-descricao">Vibes relaxantes!</div>
+                    </div>
+
+                    <div class="categoria-card" onclick="iniciarJogo('rockbr')">
+                        <div class="categoria-emoji">🤘</div>
+                        <div class="categoria-nome">Rock BR</div>
+                        <div class="categoria-descricao">Rock nacional clássico!</div>
+                    </div>
+
+                    <div class="categoria-card" onclick="iniciarJogo('sertanejo')">
+                        <div class="categoria-emoji">🤠</div>
+                        <div class="categoria-nome">Sertanejo</div>
+                        <div class="categoria-descricao">Sofrência garantida!</div>
+                    </div>
+    
+                    <div class="categoria-card" onclick="iniciarJogo('samba')">
+                        <div class="categoria-emoji">🎪</div>
+                        <div class="categoria-nome">Samba</div>
+                        <div class="categoria-descricao">O ritmo do Brasil!</div>
+                    </div>
+    
+                    <div class="categoria-card" onclick="iniciarJogo('pagode')">
+                        <div class="categoria-emoji">🎵</div>
+                        <div class="categoria-nome">Pagode</div>
+                        <div class="categoria-descricao">Roda de pagode!</div>
+                    </div>
+    
+                    <div class="categoria-card" onclick="iniciarJogo('forro')">
+                        <div class="categoria-emoji">🪗</div>
+                        <div class="categoria-nome">Forró</div>
+                        <div class="categoria-descricao">Xote, xaxado e baião!</div>
+                    </div>
+    
+                    <div class="categoria-card" onclick="iniciarJogo('funk')">
+                        <div class="categoria-emoji">💃</div>
+                        <div class="categoria-nome">Funk</div>
+                        <div class="categoria-descricao">Hoje tem baile!</div>
+                    </div>
+    
+                    <div class="categoria-card" onclick="iniciarJogo('eletronica')">
+                        <div class="categoria-emoji">🎹</div>
+                        <div class="categoria-nome">Eletrônica</div>
+                        <div class="categoria-descricao">Solta o drop!</div>
+                    </div>
+                    
+                    <div class="categoria-card" onclick="iniciarJogo('anos80')">
+                        <div class="categoria-emoji">🎶</div>
+                        <div class="categoria-nome">Anos 80</div>
+                        <div class="categoria-descricao">Hits inesquecíveis da década de 80!</div>
+                    </div>
+    
+                    <div class="categoria-card" onclick="iniciarJogo('anos90')">
+                        <div class="categoria-emoji">📼</div>
+                        <div class="categoria-nome">Anos 90</div>
+                        <div class="categoria-descricao">O som que marcou a década!</div>
+                    </div>
+
+                    <div class="categoria-card" onclick="iniciarJogo('anos2000eua')">
+                        <div class="categoria-emoji">📻</div>
+                        <div class="categoria-nome">Anos 2000</div>
+                        <div class="categoria-descricao">Nostalgia total!</div>
+                    </div>
+    
+                    <div class="categoria-card" onclick="iniciarJogo('anos2000br')">
+                        <div class="categoria-emoji">📼</div>
+                        <div class="categoria-nome">Anos 2000 Nacional</div>
+                        <div class="categoria-descricao">Memórias brasileiras!</div>
+                    </div>
+
+                    <div class="categoria-card" onclick="iniciarJogo('hiphop')">
+                        <div class="categoria-emoji">🎙️</div>
+                        <div class="categoria-nome">Hip Hop</div>
+                        <div class="categoria-descricao">Batidas e rimas!</div>
+                    </div>
+
+                    <div class="categoria-card" onclick="iniciarJogo('rock')">
+                        <div class="categoria-emoji">🤘</div>
+                        <div class="categoria-nome">Rock</div>
+                        <div class="categoria-descricao">Rock and Roll</div>
+                    </div>
+
+                    <div class="categoria-card" onclick="iniciarJogo('kpop')">
+                        <div class="categoria-emoji">🇰🇷</div>
+                        <div class="categoria-nome">K-pop</div>
+                        <div class="categoria-descricao">Música coreana!</div>
+                    </div>
+
+                    <div class="categoria-card" onclick="iniciarJogo('jazz')">
+                        <div class="categoria-emoji">🎷</div>
+                        <div class="categoria-nome">Jazz</div>
+                        <div class="categoria-descricao">Swing e improviso!</div>
+                    </div>
+
+                    <div class="categoria-card" onclick="iniciarJogo('reb')">
+                        <div class="categoria-emoji">🎵</div>
+                        <div class="categoria-nome">R&B</div>
+                        <div class="categoria-descricao">Ritmo e Blues!</div>
+                    </div>
+
+                    <div class="categoria-card" onclick="iniciarJogo('classica')">
+                        <div class="categoria-emoji">🎻</div>
+                        <div class="categoria-nome">Clássica</div>
+                        <div class="categoria-descricao">A beleza da música clássica!</div>
+                    </div>
+
+                    <div class="categoria-card" onclick="iniciarJogo('mtg')">
+                        <div class="categoria-emoji">🎴</div>
+                        <div class="categoria-nome">MTG</div>
+                        <div class="categoria-descricao">Mega dos bailes!</div>
+                    </div>
+    
+                    <div class="categoria-card" onclick="iniciarJogo('hinos')">
+                        <div class="categoria-emoji">⚽</div>
+                        <div class="categoria-nome">Hinos de Futebol</div>
+                        <div class="categoria-descricao">Paixão nacional!</div>
+                    </div>
+    
+                    <div class="categoria-card" onclick="iniciarJogo('gamer')">
+                        <div class="categoria-emoji">🎮</div>
+                        <div class="categoria-nome">Gamer</div>
+                        <div class="categoria-descricao">Press Start!</div>
+                    </div>
+    
+                    <div class="categoria-card" onclick="iniciarJogo('anime')">
+                        <div class="categoria-emoji">🍥</div>
+                        <div class="categoria-nome">Anime</div>
+                        <div class="categoria-descricao">Kawaii desu!</div>
+                    </div>
+
+                    <div class="categoria-card" onclick="iniciarJogo('filme')">
+                        <div class="categoria-emoji">📼</div>
+                        <div class="categoria-nome">Cinema</div>
+                        <div class="categoria-descricao">Luz, câmera e muita música!</div>
+                    </div>
+
+                    <div class="categoria-card" onclick="iniciarJogo('theweeknd')">
+                        <div class="categoria-emoji">👨🏾</div>
+                        <div class="categoria-nome">The Weeknd</div>
+                        <div class="categoria-descricao">Blinding Lights!</div>
+                    </div>
+    
+                    <div class="categoria-card" onclick="iniciarJogo('lanadelrey')">
+                        <div class="categoria-emoji">👩🏻</div>
+                        <div class="categoria-nome">Lana del Rey</div>
+                        <div class="categoria-descricao">Born to Die!</div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Tela do jogo -->
+        <div id="jogo" style="display: none;">
+            <div class="game-header">
+                <button onclick="voltarParaCategorias()" class="voltar-button mobile-voltar">
+                    ← Voltar
+                </button>
+                <div id="placar">Rodada 1/5 • Pontos: 0</div>
+            </div>
+
+            <!-- Player de música -->
+            <div id="player-container" class="player-container">
+                <div class="player-controls">
+                    <button id="play-button" class="play-button">
+                        <span id="play-icon" style="margin-left: 3px">▶</span>
+                        <span id="pause-icon" style="margin-left: 1px; margin-bottom: 7px; display: none;">⏸</span>
+                    </button>
+                    <span class="adivinhe-texto">Adivinhe a música!</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+
+            <!-- Opções de música -->
+            <div id="opcoes" class="opcoes-grid">
+                <!-- As opções serão preenchidas dinamicamente pelo JavaScript -->
+            </div>
+
+            <!-- Botão para próxima pergunta -->
+            <button id="proxima-button" onclick="proximaPergunta()" disabled>
+                Próxima Música
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
