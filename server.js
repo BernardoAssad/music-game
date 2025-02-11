@@ -158,7 +158,13 @@ async function buscarMusicasDeezer(categoria, limit = 200) {
             shouldFilterByArtist = true;
             artistId = categoriaInfo.id;
         } else if (categoriaInfo.type === 'playlist') {
-            const response = await axios.get(`https://api.deezer.com/playlist/${categoriaInfo.id}/tracks`);
+            const playlistInfo = await axios.get(`https://api.deezer.com/playlist/${categoriaInfo.id}`);
+            const totalTracks = playlistInfo.data.nb_tracks;
+            
+            const maxOffset = Math.max(0, totalTracks - limit);
+            const randomOffset = Math.floor(Math.random() * maxOffset);
+            
+            const response = await axios.get(`https://api.deezer.com/playlist/${categoriaInfo.id}/tracks?index=${randomOffset}`);
             tracks = response.data.data;
         } else if (categoriaInfo.type === 'chart') {
             const response = await axios.get(`https://api.deezer.com/chart/${categoriaInfo.id}`);
