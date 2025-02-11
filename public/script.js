@@ -21,66 +21,7 @@ const fallbackMusicas = [
     }
 ];
 
-// Verifica se o usuário já jogou hoje
-function verificarTentativaDiaria() {
-    const hoje = new Date().toLocaleDateString();
-    const ultimaTentativa = localStorage.getItem('ultimaTentativa');
-
-    if (ultimaTentativa === hoje) {
-        alert("Você já jogou hoje! Tente novamente amanhã.");
-        return false;
-    }
-
-    localStorage.setItem('ultimaTentativa', hoje);
-    return true;
-}
-
-// Reseta a tentativa automaticamente à meia-noite
-function configurarResetDiario() {
-    const agora = new Date();
-    const proximoReset = new Date();
-    proximoReset.setHours(24, 0, 0, 0);
-
-    const tempoAteMeiaNoite = proximoReset - agora;
-    setTimeout(() => {
-        localStorage.removeItem('ultimaTentativa');
-        configurarResetDiario(); // Reconfigura para o próximo dia
-    }, tempoAteMeiaNoite);
-}
-
-// Inicia o reset diário ao carregar a página
-configurarResetDiario();
-
-const resetarTentativasDiarias = () => {
-    const hoje = new Date().toISOString().split('T')[0]; // Obtém a data atual (YYYY-MM-DD)
-    const ultimaData = localStorage.getItem('ultimaData');
-
-    if (ultimaData !== hoje) {
-        localStorage.setItem('ultimaData', hoje);
-        localStorage.setItem('tentativasPorCategoria', JSON.stringify({})); // Reseta as tentativas
-    }
-};
-
-const podeTentarCategoria = (categoria) => {
-    resetarTentativasDiarias();
-    
-    const tentativas = JSON.parse(localStorage.getItem('tentativasPorCategoria')) || {};
-    return !tentativas[categoria]; // Retorna true se ainda não jogou a categoria hoje
-};
-
-const registrarTentativaCategoria = (categoria) => {
-    const tentativas = JSON.parse(localStorage.getItem('tentativasPorCategoria')) || {};
-    tentativas[categoria] = true;
-    localStorage.setItem('tentativasPorCategoria', JSON.stringify(tentativas));
-};
-
-
 async function iniciarJogo(categoria) {
-    if (!podeTentarCategoria(categoria)) {
-        alert('Você já jogou essa categoria hoje! Tente novamente amanhã.');
-        return;
-    }
-
     try {
         console.log(`Iniciando jogo com categoria: ${categoria}`);
         
@@ -202,7 +143,6 @@ function finalizarJogo() {
     `;
 
     alert(mensagem);
-    registrarTentativaCategoria(categoria); // Registra a tentativa dessa categoria
     voltarParaCategorias();
 }
 
