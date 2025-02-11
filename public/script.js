@@ -28,7 +28,11 @@ async function iniciarJogo(categoria) {
         document.getElementById('categorias').style.display = 'none';
         document.getElementById('jogo').style.display = 'block';
         
-        const response = await fetch(`http://localhost:3000/api/musicas?categoria=${categoria}`);
+        const API_URL = window.location.hostname === 'localhost' 
+            ? 'http://localhost:3000'
+            : 'https://music-game-3v45.onrender.com';
+
+        const response = await fetch(`${API_URL}/api/musicas?categoria=${categoria}`);
         console.log('Resposta da requisição:', response);
 
         if (!response.ok) {
